@@ -1,0 +1,39 @@
+<div class="container">
+    <h1 class="text-secondary d-flex justify-content-center">SpringBoot + Angular CRUD</h1>
+    <form (ngSubmit)="createtask()" class="row mt-5">
+        <div class="col-md-10">
+            <label for="description">Description</label>
+            <input type="text" class="form-control" [(ngModel)]="newtask.description" placeholder="Enter Description"
+                name="newtaskDescriptuon">
+        </div>
+        <div class="col-md-2">
+            <button type="submit" class="btn btn-success mt-4">Add Task</button>
+        </div>
+    </form>
+
+
+
+
+</div>
+
+
+<div class="container">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Description</th>
+                <th>Completed</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for(task of task ; track task){
+            <tr>
+                <td>{{ task.id }}</td>
+                <td>{{ task.description }}</td>
+                <td>{{ task.completed }}</td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>
